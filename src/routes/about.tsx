@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Card, CardContent } from '../components/ui/card'
-import { Separator } from '../components/ui/separator'
+// import { Separator } from '../components/ui/separator'
 
 export const Route = createFileRoute('/about')({
   component: About,
