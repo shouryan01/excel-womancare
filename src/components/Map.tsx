@@ -5,7 +5,7 @@ interface MapProps {
 
 export function Map({ address, className = "" }: MapProps) {
   const encodedAddress = encodeURIComponent(address);
-  const apiKey = import.meta.env.GOOGLE_MAPS_API_KEY;
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodedAddress}`;
 
   return (
