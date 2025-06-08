@@ -12,7 +12,10 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ContactImport } from './routes/contact'
+import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as ServicesObstetricsImport } from './routes/services.obstetrics'
+import { Route as ServicesGynecologyImport } from './routes/services.gynecology'
 
 // Create/Update Routes
 
@@ -22,9 +25,27 @@ const ContactRoute = ContactImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const AboutRoute = AboutImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesObstetricsRoute = ServicesObstetricsImport.update({
+  id: '/services/obstetrics',
+  path: '/services/obstetrics',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesGynecologyRoute = ServicesGynecologyImport.update({
+  id: '/services/gynecology',
+  path: '/services/gynecology',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,11 +60,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/gynecology': {
+      id: '/services/gynecology'
+      path: '/services/gynecology'
+      fullPath: '/services/gynecology'
+      preLoaderRoute: typeof ServicesGynecologyImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/obstetrics': {
+      id: '/services/obstetrics'
+      path: '/services/obstetrics'
+      fullPath: '/services/obstetrics'
+      preLoaderRoute: typeof ServicesObstetricsImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +95,68 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services/gynecology'
+    | '/services/obstetrics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact'
-  id: '__root__' | '/' | '/contact'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services/gynecology'
+    | '/services/obstetrics'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services/gynecology'
+    | '/services/obstetrics'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  ServicesGynecologyRoute: typeof ServicesGynecologyRoute
+  ServicesObstetricsRoute: typeof ServicesObstetricsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  ServicesGynecologyRoute: ServicesGynecologyRoute,
+  ServicesObstetricsRoute: ServicesObstetricsRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +170,26 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/contact"
+        "/about",
+        "/contact",
+        "/services/gynecology",
+        "/services/obstetrics"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/about": {
+      "filePath": "about.tsx"
+    },
     "/contact": {
       "filePath": "contact.tsx"
+    },
+    "/services/gynecology": {
+      "filePath": "services.gynecology.tsx"
+    },
+    "/services/obstetrics": {
+      "filePath": "services.obstetrics.tsx"
     }
   }
 }
