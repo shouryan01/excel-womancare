@@ -5,11 +5,10 @@ import Header from '../components/Header'
 
 export const Route = createRootRoute({
   component: () => (
-    <>
+    <div className="h-screen">
       <Header />
-
       <Outlet />
       <TanStackRouterDevtools />
-    </>
+    </div>
   ),
 })

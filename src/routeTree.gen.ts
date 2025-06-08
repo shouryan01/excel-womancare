@@ -15,7 +15,11 @@ import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as ServicesObstetricsImport } from './routes/services.obstetrics'
-import { Route as ServicesGynecologyImport } from './routes/services.gynecology'
+import { Route as ServicesGynaecologyImport } from './routes/services.gynaecology'
+import { Route as ServicesFertilityImport } from './routes/services.fertility'
+import { Route as InfoUsefulLinksImport } from './routes/info.useful-links'
+import { Route as InfoFeesImport } from './routes/info.fees'
+import { Route as InfoAppointmentsImport } from './routes/info.appointments'
 
 // Create/Update Routes
 
@@ -43,9 +47,33 @@ const ServicesObstetricsRoute = ServicesObstetricsImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ServicesGynecologyRoute = ServicesGynecologyImport.update({
-  id: '/services/gynecology',
-  path: '/services/gynecology',
+const ServicesGynaecologyRoute = ServicesGynaecologyImport.update({
+  id: '/services/gynaecology',
+  path: '/services/gynaecology',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ServicesFertilityRoute = ServicesFertilityImport.update({
+  id: '/services/fertility',
+  path: '/services/fertility',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InfoUsefulLinksRoute = InfoUsefulLinksImport.update({
+  id: '/info/useful-links',
+  path: '/info/useful-links',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InfoFeesRoute = InfoFeesImport.update({
+  id: '/info/fees',
+  path: '/info/fees',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const InfoAppointmentsRoute = InfoAppointmentsImport.update({
+  id: '/info/appointments',
+  path: '/info/appointments',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,11 +102,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/services/gynecology': {
-      id: '/services/gynecology'
-      path: '/services/gynecology'
-      fullPath: '/services/gynecology'
-      preLoaderRoute: typeof ServicesGynecologyImport
+    '/info/appointments': {
+      id: '/info/appointments'
+      path: '/info/appointments'
+      fullPath: '/info/appointments'
+      preLoaderRoute: typeof InfoAppointmentsImport
+      parentRoute: typeof rootRoute
+    }
+    '/info/fees': {
+      id: '/info/fees'
+      path: '/info/fees'
+      fullPath: '/info/fees'
+      preLoaderRoute: typeof InfoFeesImport
+      parentRoute: typeof rootRoute
+    }
+    '/info/useful-links': {
+      id: '/info/useful-links'
+      path: '/info/useful-links'
+      fullPath: '/info/useful-links'
+      preLoaderRoute: typeof InfoUsefulLinksImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/fertility': {
+      id: '/services/fertility'
+      path: '/services/fertility'
+      fullPath: '/services/fertility'
+      preLoaderRoute: typeof ServicesFertilityImport
+      parentRoute: typeof rootRoute
+    }
+    '/services/gynaecology': {
+      id: '/services/gynaecology'
+      path: '/services/gynaecology'
+      fullPath: '/services/gynaecology'
+      preLoaderRoute: typeof ServicesGynaecologyImport
       parentRoute: typeof rootRoute
     }
     '/services/obstetrics': {
@@ -97,7 +153,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/info/appointments': typeof InfoAppointmentsRoute
+  '/info/fees': typeof InfoFeesRoute
+  '/info/useful-links': typeof InfoUsefulLinksRoute
+  '/services/fertility': typeof ServicesFertilityRoute
+  '/services/gynaecology': typeof ServicesGynaecologyRoute
   '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
@@ -105,7 +165,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/info/appointments': typeof InfoAppointmentsRoute
+  '/info/fees': typeof InfoFeesRoute
+  '/info/useful-links': typeof InfoUsefulLinksRoute
+  '/services/fertility': typeof ServicesFertilityRoute
+  '/services/gynaecology': typeof ServicesGynaecologyRoute
   '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
@@ -114,7 +178,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services/gynecology': typeof ServicesGynecologyRoute
+  '/info/appointments': typeof InfoAppointmentsRoute
+  '/info/fees': typeof InfoFeesRoute
+  '/info/useful-links': typeof InfoUsefulLinksRoute
+  '/services/fertility': typeof ServicesFertilityRoute
+  '/services/gynaecology': typeof ServicesGynaecologyRoute
   '/services/obstetrics': typeof ServicesObstetricsRoute
 }
 
@@ -124,21 +192,33 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/services/gynecology'
+    | '/info/appointments'
+    | '/info/fees'
+    | '/info/useful-links'
+    | '/services/fertility'
+    | '/services/gynaecology'
     | '/services/obstetrics'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
-    | '/services/gynecology'
+    | '/info/appointments'
+    | '/info/fees'
+    | '/info/useful-links'
+    | '/services/fertility'
+    | '/services/gynaecology'
     | '/services/obstetrics'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
-    | '/services/gynecology'
+    | '/info/appointments'
+    | '/info/fees'
+    | '/info/useful-links'
+    | '/services/fertility'
+    | '/services/gynaecology'
     | '/services/obstetrics'
   fileRoutesById: FileRoutesById
 }
@@ -147,7 +227,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  ServicesGynecologyRoute: typeof ServicesGynecologyRoute
+  InfoAppointmentsRoute: typeof InfoAppointmentsRoute
+  InfoFeesRoute: typeof InfoFeesRoute
+  InfoUsefulLinksRoute: typeof InfoUsefulLinksRoute
+  ServicesFertilityRoute: typeof ServicesFertilityRoute
+  ServicesGynaecologyRoute: typeof ServicesGynaecologyRoute
   ServicesObstetricsRoute: typeof ServicesObstetricsRoute
 }
 
@@ -155,7 +239,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ServicesGynecologyRoute: ServicesGynecologyRoute,
+  InfoAppointmentsRoute: InfoAppointmentsRoute,
+  InfoFeesRoute: InfoFeesRoute,
+  InfoUsefulLinksRoute: InfoUsefulLinksRoute,
+  ServicesFertilityRoute: ServicesFertilityRoute,
+  ServicesGynaecologyRoute: ServicesGynaecologyRoute,
   ServicesObstetricsRoute: ServicesObstetricsRoute,
 }
 
@@ -172,7 +260,11 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/contact",
-        "/services/gynecology",
+        "/info/appointments",
+        "/info/fees",
+        "/info/useful-links",
+        "/services/fertility",
+        "/services/gynaecology",
         "/services/obstetrics"
       ]
     },
@@ -185,8 +277,20 @@ export const routeTree = rootRoute
     "/contact": {
       "filePath": "contact.tsx"
     },
-    "/services/gynecology": {
-      "filePath": "services.gynecology.tsx"
+    "/info/appointments": {
+      "filePath": "info.appointments.tsx"
+    },
+    "/info/fees": {
+      "filePath": "info.fees.tsx"
+    },
+    "/info/useful-links": {
+      "filePath": "info.useful-links.tsx"
+    },
+    "/services/fertility": {
+      "filePath": "services.fertility.tsx"
+    },
+    "/services/gynaecology": {
+      "filePath": "services.gynaecology.tsx"
     },
     "/services/obstetrics": {
       "filePath": "services.obstetrics.tsx"
