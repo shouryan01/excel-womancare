@@ -6,7 +6,7 @@ export const Route = createFileRoute('/services/gynaecology')({
 
 function GynaecologyServices() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-violet-100 via-white to-pink-100">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
