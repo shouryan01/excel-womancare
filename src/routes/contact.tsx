@@ -70,7 +70,7 @@ function Contact() {
             </div>
             <p className="text-gray-600">
               Please leave a message or send an email on{' '}
-              <a href="mailto:excelwomancare@gmail.com" className="text-violet-600 hover:text-violet-700 transition-colors duration-200">
+              <a href="mailto:excelwomancare@gmail.com" className="text-violet-600 hover:text-violet-700 hover:underline transition-colors duration-200">
                 excelwomancare@gmail.com
               </a>{' '}
               for any enquiries outside office hours and we will try to get back to you as soon as possible.
@@ -129,7 +129,7 @@ function Contact() {
               <AlertTriangle className="w-5 h-5 text-red-600 mr-3" />
               <p className="text-red-600">
                 For medical emergencies or out of hours, contact St Andrew's Ipswich Private Hospital on{' '}
-                <span className="font-bold">07 3816 9999</span> or <span className="font-bold font-code">"000"</span>.
+                <span className="font-bold">"0738169999"</span> or <span className="font-bold font-code">"000"</span>.
               </p>
             </div>
           </div>

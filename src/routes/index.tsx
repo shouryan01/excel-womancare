@@ -1,10 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
+import { useState } from 'react'
+import { ServicesModal } from '@/components/ServicesModal'
 
 export const Route = createFileRoute('/')({
   component: App,
 })
 
 function App() {
+  const [isServicesModalOpen, setIsServicesModalOpen] = useState(false)
+
   return (
     <div className="h-[calc(100vh-5rem)] bg-gradient-to-br from-violet-50 via-white to-pink-50">
       {/* Hero Section with Background Image */}
@@ -28,12 +32,12 @@ function App() {
               Where expertise meets empathy in women's health
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                to="/services/obstetrics"
+              <button
+                onClick={() => setIsServicesModalOpen(true)}
                 className="px-8 py-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white rounded-full transition-all duration-300 font-medium"
               >
                 Our Services
-              </Link>
+              </button>
               <Link
                 to="/info/appointments"
                 className="px-8 py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-full transition-all duration-300 font-medium"
@@ -44,6 +48,10 @@ function App() {
           </div>
         </div>
       </div>
+      <ServicesModal
+        isOpen={isServicesModalOpen}
+        onClose={() => setIsServicesModalOpen(false)}
+      />
     </div>
   )
 }

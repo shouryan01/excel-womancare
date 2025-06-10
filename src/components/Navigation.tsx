@@ -3,11 +3,16 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from './ui/navigation-menu'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
 
 export function Navigation() {
   const currentPath = useRouterState({ select: state => state.location.pathname });
@@ -19,169 +24,111 @@ export function Navigation() {
   const isDropdownActive = (base: string) => currentPath.startsWith(base);
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link
-            to="/"
-            className={navigationMenuTriggerStyle({
-              className: isActive('/') ? 'text-violet-400 underline underline-offset-4' : ''
-            })}
-          >
-            Home
-          </Link>
-        </NavigationMenuItem>
+    <div className="flex justify-center">
+      <NavigationMenu className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-lg border rounded-full px-2 py-1">
+        <NavigationMenuList className="flex justify-center gap-1">
+          <NavigationMenuItem>
+            <Link
+              to="/"
+              className={navigationMenuTriggerStyle({
+                className: isActive('/') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'
+              })}
+            >
+              Home
+            </Link>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <Link
-            to="/about"
-            className={navigationMenuTriggerStyle({
-              className: isActive('/about') ? 'text-violet-400 underline underline-offset-4' : ''
-            })}
-          >
-            About
-          </Link>
-        </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link
+              to="/about"
+              className={navigationMenuTriggerStyle({
+                className: isActive('/about') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'
+              })}
+            >
+              About Us
+            </Link>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className={isDropdownActive('/services') ? 'text-violet-400 underline underline-offset-4' : ''}>
-            Services
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link
-                    to="/services/obstetrics"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
-                  >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/services/obstetrics') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Obstetrics</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Comprehensive obstetric care and support
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
+          <NavigationMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={navigationMenuTriggerStyle({
+                  className: isDropdownActive('/services') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'
+                })}
+              >
+                Services
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="py-2 [&>*]:hover:bg-violet-400/10 [&>*]:focus:bg-violet-400/10">
+                <DropdownMenuItem asChild className="py-3">
                   <Link
                     to="/services/gynaecology"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
+                    className={isActive('/services/gynaecology') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'}
                   >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/services/gynaecology') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Gynaecology</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Expert gynaecological services and care
-                    </p>
+                    Gynaecology
                   </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="py-3">
                   <Link
-                    to="/services/fertility"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
+                    to="/services/obstetrics"
+                    className={isActive('/services/obstetrics') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'}
                   >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/services/fertility') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Fertility</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Fertility and reproductive health services
-                    </p>
+                    Obstetrics & Fertility
                   </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className={isDropdownActive('/info') ? 'text-violet-400 underline underline-offset-4' : ''}>
-            Info
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-              <li>
-                <NavigationMenuLink asChild>
+          <NavigationMenuItem>
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={navigationMenuTriggerStyle({
+                  className: isDropdownActive('/info') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'
+                })}
+              >
+                Info
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="py-2 [&>*]:hover:bg-violet-400/10 [&>*]:focus:bg-violet-400/10">
+                <DropdownMenuItem asChild className="py-3">
                   <Link
                     to="/info/appointments"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
+                    className={isActive('/info/appointments') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'}
                   >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/info/appointments') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Appointments</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Appointment information and booking
-                    </p>
+                    Appointments
                   </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="py-3">
                   <Link
                     to="/info/fees"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
+                    className={isActive('/info/fees') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'}
                   >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/info/fees') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Fees</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Fee information and payment details
-                    </p>
+                    Fees
                   </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild className="py-3">
                   <Link
                     to="/info/useful-links"
-                    className={
-                      'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:text-violet-400 focus:text-violet-400'
-                    }
+                    className={isActive('/info/useful-links') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'}
                   >
-                    <div className={
-                      'text-sm font-medium leading-none' +
-                      (isActive('/info/useful-links') ? ' text-violet-400 underline underline-offset-4' : '')
-                    }>Useful Links</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      Helpful resources and links
-                    </p>
+                    Useful Links
                   </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </NavigationMenuItem>
 
-        <NavigationMenuItem>
-          <Link
-            to="/contact"
-            className={navigationMenuTriggerStyle({
-              className: isActive('/contact') ? 'text-violet-400 underline underline-offset-4' : ''
-            })}
-          >
-            Contact
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+          <NavigationMenuItem>
+            <Link
+              to="/contact"
+              className={navigationMenuTriggerStyle({
+                className: isActive('/contact') ? 'bg-violet-400/20 text-violet-700 rounded-full px-4 py-2' : 'hover:bg-violet-400/10 rounded-full px-4 py-2 text-gray-800'
+              })}
+            >
+              Contact
+            </Link>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   )
 }

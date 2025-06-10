@@ -17,51 +17,35 @@ function About() {
             </svg>
           </div>
           <h1 className="text-5xl font-bold mb-4 p-1 bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
-            Dr. Sarika Bhadange
+            About Us
           </h1>
-          <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
+          {/* <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
             MBBS, FRANZCOG
           </h3>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Specialist Obstetrician and Gynaecologist
-          </p>
+          </p> */}
         </div>
 
-        {/* Doctor's Image Section */}
-        <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300 mb-8 overflow-hidden">
-          <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto rounded-lg overflow-hidden">
-            <img
-              src="/about-headshot.png"
-              alt="Dr. Sarika Bhadange"
-              className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-          </div>
-        </div>
-
-        {/* Bio and Quote Section */}
-        <div className="flex flex-col md:flex-row gap-12 mb-12">
-          {/* Bio Column */}
-          <div className="md:w-2/3 w-full flex flex-col justify-center">
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-2 h-8 bg-gradient-to-b from-violet-500 to-pink-500 rounded-full mr-3"></div>
-                <h2 className="text-2xl font-bold text-gray-800">Professional Background</h2>
-              </div>
-              <div className="text-base text-gray-600 space-y-4">
-                <p>
-                  Dr Sarika Bhadange is a specialist Obstetrician and Gynaecologist. After completing her MBBS and post-graduation in Obstetrics and Gynaecology from a prestigious University in Mumbai, India, she moved to Australia in 2006. She has worked in several Queensland hospitals, including QEII Hospital, Redland Hospital, Royal Brisbane and Women's Hospital, and Mackay Base Hospital, completing her fellowship of the Royal Australian and New Zealand College of Obstetricians and Gynaecologists (FRANZCOG) in 2017. She further completed a Fellowship year in Paediatric and Adolescent Gynaecology at RBWH and QCH.
-                </p>
-                <p>
-                  Dr Bhadange is passionate about providing up-to-date, compassionate, and personalised care for women at every stage of life. She founded Excel Womancare Pty Ltd to offer dignified, expert gynaecology care. She is also a Consultant at Ipswich Hospital, where she enjoys research and mentoring the next generation of doctors.
-                </p>
+        {/* Image and Quote Section */}
+        <div className="flex flex-col md:flex-row gap-8 mb-12">
+          {/* Image Column */}
+          <div className="md:w-2/3 w-full">
+            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+              <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
+                <img
+                  src="/about-headshot.png"
+                  alt="Dr. Sarika Bhadange"
+                  className="object-contain w-full h-full transform"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0  transition-opacity duration-300"></div>
               </div>
             </div>
           </div>
 
           {/* Quote Column */}
-          <div className="md:w-1/3 w-full flex flex-col items-center justify-center mt-8 md:mt-0">
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300 w-full">
+          <div className="md:w-1/3 w-full">
+            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300 h-full">
               <Quote className="w-8 h-8 text-violet-600 mb-4" />
               <p className="italic text-lg text-gray-600 mb-4">
                 "Since I was a medical student, I believed that women deserve compassionate and knowledgeable care at every stage of life."
@@ -73,102 +57,25 @@ function About() {
           </div>
         </div>
 
-        {/* Qualifications and Special Interests */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Qualifications */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-2 h-8 bg-gradient-to-b from-violet-500 to-pink-500 rounded-full mr-3"></div>
-              <h2 className="text-2xl font-bold text-gray-800">Qualifications</h2>
-            </div>
-            <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center">
-                <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                MBBS, Mumbai, India
-              </li>
-              <li className="flex items-center">
-                <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                Post-graduation in Obstetrics and Gynaecology, Mumbai, India
-              </li>
-              <li className="flex items-center">
-                <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                FRANZCOG, 2017
-              </li>
-              <li className="flex items-center">
-                <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                Fellowship in Paediatric and Adolescent Gynaecology, RBWH & QCH
-              </li>
-              <li className="flex items-center">
-                <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>
-                Extensive experience in Queensland hospitals
-              </li>
-            </ul>
-          </div>
 
-          {/* Special Interests */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-2 h-8 bg-gradient-to-b from-violet-500 to-pink-500 rounded-full mr-3"></div>
-              <h2 className="text-2xl font-bold text-gray-800">Special Interest Areas</h2>
-            </div>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-violet-600 mb-3">Obstetrics</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Medical disorders in pregnancy
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    High and low risk obstetrics
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Twin pregnancy
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Diabetes in pregnancy (pre-existing and gestational)
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-violet-600 mb-3">Gynaecology</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Laparoscopic surgery
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Hysterectomy
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Infertility
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Prolapse and urinary incontinence
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                    Menstrual disorders
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Personal Life Section */}
         <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-          <div className="flex items-center mb-6">
-            <div className="w-2 h-8 bg-gradient-to-b from-violet-500 to-pink-500 rounded-full mr-3"></div>
-            <h2 className="text-2xl font-bold text-gray-800">Personal Life</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 mb-6">
+              <div className="text-base text-gray-600 space-y-4">
+                <p>
+                I always aspired to become an Obstetrician-Gynaecologist.
+                </p>
+
+                <p>After completing my MBBS and post-graduation in Obstetrics and Gynaecology from a prestigious University in Mumbai, India, I came to Australia in 2006 with my family. I fell in love with this country and found my purpose in building a       career for its women.</p>
+
+                <p>I worked in many Queensland Hospitals like QEll Hospital, Redland Hospital, Royal Brisbane and
+Women Hospital and Mackay Base Hospital to complete my fellowship of Royal Australian New Zealand College of Obstetrics and Gynaecology.</p>
+
+                <p>I was honoured to be awarded with fellowship - FRANZCOG - in 2017. The following year, I completed my Fellowship year in Paediatric and Adolescent Gynaecology (PAG) at Royal Brisbane and Women's Hospital (RBWH) and Queensland Children Hospital (QCH).</p>
+                <p>Creating my own Gynaecology practice "Excel Womancare Pty Ltd" was more than a career goal. It was a lifelong passion rooted in a belief that every woman deserves dignified, expert gynaecology care.</p>
+                <p>I joined Ipswich Hospital as a Consultant in 2019, which fulfils my other passion -participation in research and guiding the next generation of doctors through mentorship and hands-on training.</p>
+              </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-6 mt-12">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <img
                 src="/hiking.png"
@@ -187,7 +94,8 @@ function About() {
             </div>
           </div>
           <p className="text-gray-600">
-            Dr Bhadange maintains work-life balance through daily exercise, meditation, and spending quality time with her family. She enjoys being in nature, hiking, walking, gardening, and photography.
+          I maintain work life balance through simple, grounded activities like daily exercise, meditation and spending quality time with my two beautiful boys and lovely husband.
+          I love doing in nature whether it's hiking, walking, gardening or simply being outdoors.
           </p>
         </div>
       </div>

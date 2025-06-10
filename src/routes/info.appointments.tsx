@@ -27,6 +27,12 @@ function RouteComponent() {
           <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             <div className="prose prose-lg max-w-none">
               <div className="space-y-6">
+              <div className="flex items-star mb-8">
+                  <p className="text-gray-700 leading-relaxed">
+                    Schedule your appointment by calling <a href="tel:0734444870" className="text-violet-600 font-bold transition-colors duration-200 hover:underline">07 3444 4870</a> or emailing <a href="mailto:excelwomancare@gmail.com" className="text-violet-600 hover:underline font-bold transition-colors duration-200">excelwomancare@gmail.com</a>
+                  </p>
+                </div>
+
                 <div className="flex items-start">
                   <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 mt-1.5"></div>
                   <p className="text-gray-700 leading-relaxed">

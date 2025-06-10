@@ -1,4 +1,4 @@
-Welcome to your new TanStack app! 
+Welcome to your new TanStack app!
 
 # Getting Started
 
@@ -6,7 +6,7 @@ To run this application:
 
 ```bash
 bun install
-bunx --bun run start  
+bunx --bun run start
 ```
 
 # Building For Production
