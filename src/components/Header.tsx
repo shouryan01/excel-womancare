@@ -16,7 +16,7 @@ export default function Header() {
           </div>
 
           <div className="text-center md:text-right">
-            <h1 className="text-sm sm:text-sm md:text-md lg:text-xl xl:text-2xl font-bold text-violet-600">Dr Sarika Bhadange</h1>
+            <h1 className="text-sm sm:text-sm md:text-md lg:text-xl xl:text-2xl font-bold text-[#6A5391]">Dr Sarika Bhadange</h1>
             <p className="text-xs sm:text-xs lg:text-sm text-gray-600">MBBS, FRANZCOG</p>
           </div>
         </div>
