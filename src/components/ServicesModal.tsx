@@ -15,17 +15,17 @@ export function ServicesModal({ isOpen, onClose }: ServicesModalProps) {
   const services = [
     {
       title: "Gynaecology",
-      image: "gynaecology.png",
+      image: "gynaecology.jpg",
       href: "/services/gynaecology"
     },
     {
       title: "Obstetrics",
-      image: "obstetrics.png",
+      image: "obstetrics.jpg",
       href: "/services/obstetrics"
     },
     {
       title: "Fertility",
-      image: "fertility.png",
+      image: "fertility.jpg",
       href: "/services/obstetrics#fertility"
     }
   ]
