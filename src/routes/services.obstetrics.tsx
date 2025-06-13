@@ -36,36 +36,45 @@ function ObstetricsServices() {
             Services I Provide
           </h2>
 
+
+          {/* Mobile Image */}
+          <div className="md:hidden mt-8 text-center mb-8">
+            <img src="/operating_obstetrics.jpg" alt="Operating Room" className="rounded-lg shadow-lg h-[300px] object-contain inline-block" />
+          </div>
+
           {/* Services List */}
-          <div className="space-y-6">
-            <div className="flex items-start">
-              <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 mt-1.5"></div>
-              <p className="text-gray-700 leading-relaxed">Pre-pregnancy counselling</p>
-            </div>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="space-y-6 flex-1">
+              <div className="flex items-start">
+                <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 mt-1.5"></div>
+                <p className="text-gray-700 leading-relaxed">Pre-pregnancy counselling</p>
+              </div>
 
-            <div className="flex items-start">
-              <div className="w-3 h-3 bg-pink-500 rounded-full mr-3 mt-1.5"></div>
-              <p className="text-gray-700 leading-relaxed">Prenatal genetic and chromosomal testing</p>
-            </div>
+              <div className="flex items-start">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-3 mt-1.5"></div>
+                <p className="text-gray-700 leading-relaxed">Prenatal genetic and chromosomal testing</p>
+              </div>
 
-            <div className="flex items-start">
-              <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 mt-1.5"></div>
-              <p className="text-gray-700 leading-relaxed">Management of early pregnancy complications</p>
-            </div>
+              <div className="flex items-start">
+                <div className="w-3 h-3 bg-violet-500 rounded-full mr-3 mt-1.5"></div>
+                <p className="text-gray-700 leading-relaxed">Management of early pregnancy complications</p>
+              </div>
 
-            <div className="flex items-start">
-              <div className="w-3 h-3 bg-pink-500 rounded-full mr-3 mt-1.5"></div>
-              <p className="text-gray-700 leading-relaxed">Routine antenatal care</p>
-            </div>
+              <div className="flex items-start">
+                <div className="w-3 h-3 bg-pink-500 rounded-full mr-3 mt-1.5"></div>
+                <p className="text-gray-700 leading-relaxed">Routine antenatal care</p>
+              </div>
 
-            <div className="flex items-start">
-              <div className="w-3 h-3 bg-gradient-to-r from-violet-500 to-pink-500 rounded-full mr-3 mt-1.5"></div>
-              <div>
-                <p className="text-gray-700 leading-relaxed mb-2">Management of high-risk pregnancies and pregnancy complications, such as pre-existing medical conditions, Hypertension in pregnancy, diabetes in pregnancy, Multiple pregnancies
-                </p>
+              <div className="flex items-start">
+                <div className="w-3 h-3 aspect-square bg-violet-500 rounded-full mr-3 mt-1.5"></div>
+                <p className="text-gray-700 leading-relaxed">Management of high-risk pregnancies and pregnancy complications, such as pre-existing medical conditions, Hypertension in pregnancy, diabetes in pregnancy, Multiple pregnancies</p>
               </div>
             </div>
+            <div className="hidden md:block flex-1">
+              <img src="/operating_obstetrics.jpg" alt="Operating Room" className="rounded-lg shadow-lg max-h-[400px] -mt-16 ml-auto object-cover" />
+            </div>
           </div>
+
 
           <div className="text-center mb-12 mt-20">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-violet-100 rounded-full mb-6">
