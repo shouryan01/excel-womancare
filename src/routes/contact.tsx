@@ -48,11 +48,11 @@ function Contact() {
                   07 3444 4869
                 </span>
               </a>
-              <a href="mailto:excelwomancare@gmail.com" className="group flex items-center p-3 rounded-lg hover:bg-violet-50 transition-colors duration-200">
+              <a href="mailto:reception@excelwomancare.com.au" className="group flex items-center p-3 rounded-lg hover:bg-violet-50 transition-colors duration-200">
                 <div className="w-3 h-3 bg-violet-500 rounded-full mr-3"></div>
                 <Mail className="w-5 h-5 text-gray-600 mr-3" />
                 <span className="font-medium text-gray-800 group-hover:text-violet-600 transition-colors duration-200">
-                excelwomancare@gmail.com
+                reception@excelwomancare.com.au
                 </span>
               </a>
             </div>
@@ -70,8 +70,8 @@ function Contact() {
             </div>
             <p className="text-gray-600">
               Please leave a message or send an email on{' '}
-              <a href="mailto:excelwomancare@gmail.com" className="text-violet-600 hover:text-violet-700 hover:underline transition-colors duration-200">
-                excelwomancare@gmail.com
+              <a href="mailto:reception@excelwomancare.com.au" className="text-violet-600 hover:text-violet-700 hover:underline transition-colors duration-200">
+              reception@excelwomancare.com.au
               </a>{' '}
               for any enquiries outside office hours and we will try to get back to you as soon as possible.
             </p>
