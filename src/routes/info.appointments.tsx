@@ -29,7 +29,7 @@ function RouteComponent() {
               <div className="space-y-6">
               <div className="flex items-star mb-8">
                   <p className="text-gray-700 leading-relaxed">
-                    Schedule your appointment by calling <a href="tel:0734444870" className="text-violet-600 font-bold transition-colors duration-200 hover:underline">07 3444 4870</a> or emailing <a href="mailto:reception@excelwomancare.com.au" className="text-violet-600 hover:underline font-bold transition-colors duration-200">reception@excelwomancare.com.au</a>
+                    Schedule your appointment by calling <a href="tel:0734444870" className="text-violet-600 font-bold transition-colors duration-200 hover:underline">"0734444870"</a> or emailing <a href="mailto:reception@excelwomancare.com.au" className="text-violet-600 hover:underline font-bold transition-colors duration-200">reception@excelwomancare.com.au</a>
                   </p>
                 </div>
 
