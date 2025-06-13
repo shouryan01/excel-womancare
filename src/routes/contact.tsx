@@ -51,7 +51,7 @@ function Contact() {
               <a href="mailto:reception@excelwomancare.com.au" className="group flex items-center p-3 rounded-lg hover:bg-violet-50 transition-colors duration-200">
                 <div className="w-3 h-3 bg-violet-500 rounded-full mr-3"></div>
                 <Mail className="w-5 h-5 text-gray-600 mr-3" />
-                <span className="font-medium text-gray-800 group-hover:text-violet-600 transition-colors duration-200">
+                <span className="sm:text-md text-gray-800 group-hover:text-violet-600 transition-colors duration-200">
                 reception@excelwomancare.com.au
                 </span>
               </a>

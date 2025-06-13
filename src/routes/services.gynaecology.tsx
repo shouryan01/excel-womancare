@@ -26,6 +26,11 @@ function GynaecologyServices() {
           I provide care across a broad range of Gynaecological conditions including:
           </div>
 
+          {/* Mobile Image */}
+          <div className="md:hidden mt-8 text-center mb-8">
+            <img src="/operating.png" alt="Operating Room" className="rounded-lg shadow-lg h-[300px] object-contain inline-block" />
+          </div>
+
           {/* Services List */}
           <div className="flex gap-8 items-start">
             <div className="space-y-6 mb-12 flex-1">

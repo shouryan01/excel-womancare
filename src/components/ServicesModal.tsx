@@ -34,12 +34,12 @@ export function ServicesModal({ isOpen, onClose }: ServicesModalProps) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl w-[90vw]">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-center mb-12">Our Services</DialogTitle>
+          <DialogTitle className="text-3xl font-bold text-center mb-6 sm:mb-12">Our Services</DialogTitle>
         </DialogHeader>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12 px-4">
           {services.map((service) => (
             <div key={service.title} className="flex flex-col items-center text-center">
-              <Link href={service.href} className="relative w-36 h-36 mb-6 group">
+              <Link to={service.href} className="relative w-28 h-28 sm:w-36 sm:h-36 mb-4 sm:mb-6 group">
                 <div className="absolute inset-0 rounded-full overflow-hidden">
                   <img
                     src={service.image}
