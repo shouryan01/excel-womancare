@@ -14,7 +14,7 @@ function App() {
       {/* Hero Section with Background Image */}
       <div className="h-full relative">
         <img
-          src="landing-image.png"
+          src="landing.jpeg"
           alt="Excel Womancare"
           className="w-full h-full object-cover animate-in fade-in duration-1000"
         />
