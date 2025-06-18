@@ -129,7 +129,7 @@ function Contact() {
               <AlertTriangle className="w-5 h-5 text-red-600 mr-3" />
               <p className="text-red-600">
                 For medical emergencies or out of hours, contact St Andrew's Ipswich Private Hospital on{' '}
-                <span className="font-bold">"0738169999"</span> or <span className="font-bold font-code">"000"</span>.
+                <span className="font-bold">"07 38169999"</span> or <span className="font-bold font-code">"000"</span>.
               </p>
             </div>
           </div>
